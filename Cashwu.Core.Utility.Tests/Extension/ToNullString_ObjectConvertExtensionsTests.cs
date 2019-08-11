@@ -25,7 +25,7 @@ namespace Cashwu.Core.Utility.Tests.Extension
         }
 
         [Fact]
-        public void Null_defaultValue()
+        public void Null_default_value()
         {
             ((string)null).ToNotNullString("default").Should().Be("default");
         }

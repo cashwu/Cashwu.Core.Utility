@@ -34,7 +34,7 @@ namespace Cashwu.Core.Utility.Extension
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -44,6 +44,10 @@ namespace Cashwu.Core.Utility.Extension
                 if (!char.TryParse(s, out result))
                 {
                     result = defaultValue;
+                }
+                else
+                {
+                    result = s[0];
                 }
             }
             else if (me is IConvertible)
@@ -56,7 +60,7 @@ namespace Cashwu.Core.Utility.Extension
 
         public static char ToChar(this object me)
         {
-            return me.ToChar(default(char));
+            return me.ToChar(default);
         }
 
         public static byte ToByte(this object me, byte defaultValue)
