@@ -8,7 +8,7 @@ namespace Cashwu.Core.Utility.Extension
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
