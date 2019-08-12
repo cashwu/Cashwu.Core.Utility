@@ -7,7 +7,7 @@
         <PackageProjectUrl>https://github.com/cashwu/Cashwu.Core.Utility</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageDescription>C# Core Utility</PackageDescription>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Company>cashwu</Company>
         <AssemblyName>Cashwu.Core.Utility</AssemblyName>
         <RootNamespace>Cashwu.Core.Utility</RootNamespace>

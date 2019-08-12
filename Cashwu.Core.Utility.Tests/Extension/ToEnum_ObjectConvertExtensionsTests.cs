@@ -15,7 +15,7 @@ namespace Cashwu.Core.Utility.Tests.Extension
         [Fact]
         public void Null_default_value()
         {
-            ((object)null).ToEnum<NumberEnum>(NumberEnum.One).Should().Be(NumberEnum.One);
+            ((object)null).ToEnum(NumberEnum.One).Should().Be(NumberEnum.One);
         }
 
         [Fact]
