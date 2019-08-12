@@ -71,7 +71,7 @@ namespace Cashwu.Core.Utility.Tests.Extension
         }
 
         [Fact]
-        public void Int_more_than_byte_size()
+        public void Int_more_than_ushort_size()
         {
             int i = int.MaxValue;
             Func<ushort> action = () => i.ToUShort();

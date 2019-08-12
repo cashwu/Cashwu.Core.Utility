@@ -64,7 +64,7 @@ namespace Cashwu.Core.Utility.Tests.Extension
         }
 
         [Fact]
-        public void Int_more_than_byte_size()
+        public void Int_more_than_sbyte_size()
         {
             int i = int.MaxValue;
             Func<sbyte> action = () => i.ToSByte();
