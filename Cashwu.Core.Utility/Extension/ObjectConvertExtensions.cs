@@ -125,7 +125,7 @@ namespace Cashwu.Core.Utility.Extension
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -147,14 +147,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static short ToShort(this object me)
         {
-            return me.ToShort(default(short));
+            return me.ToShort(default);
         }
 
         public static ushort ToUShort(this object me, ushort defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -176,14 +176,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static ushort ToUShort(this object me)
         {
-            return me.ToUShort(default(ushort));
+            return me.ToUShort(default);
         }
 
         public static int ToInt(this object me, int defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -205,14 +205,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static int ToInt(this object me)
         {
-            return me.ToInt(default(int));
+            return me.ToInt(default);
         }
 
         public static uint ToUInt(this object me, uint defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -234,14 +234,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static uint ToUInt(this object me)
         {
-            return me.ToUInt(default(uint));
+            return me.ToUInt(default);
         }
 
         public static long ToLong(this object me, long defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -263,14 +263,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static long ToLong(this object me)
         {
-            return me.ToLong(default(long));
+            return me.ToLong(default);
         }
 
         public static ulong ToULong(this object me, ulong defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -292,14 +292,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static ulong ToULong(this object me)
         {
-            return me.ToULong(default(ulong));
+            return me.ToULong(default);
         }
 
         public static decimal ToDecimal(this object me, decimal defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -321,14 +321,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static decimal ToDecimal(this object me)
         {
-            return me.ToDecimal(default(decimal));
+            return me.ToDecimal(default);
         }
 
         public static float ToFloat(this object me, float defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -350,14 +350,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static float ToFloat(this object me)
         {
-            return me.ToFloat(default(float));
+            return me.ToFloat(default);
         }
 
         public static double ToDouble(this object me, double defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -379,14 +379,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static double ToDouble(this object me)
         {
-            return me.ToDouble(default(double));
+            return me.ToDouble(default);
         }
 
         public static DateTime ToDateTime(this object me, DateTime defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -405,14 +405,14 @@ namespace Cashwu.Core.Utility.Extension
 
         public static DateTime ToDateTime(this object me)
         {
-            return me.ToDateTime(default(DateTime));
+            return me.ToDateTime(default);
         }
 
         public static bool ToBool(this object me, bool defaultValue)
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -449,7 +449,7 @@ namespace Cashwu.Core.Utility.Extension
         {
             TEnum result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
