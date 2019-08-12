@@ -67,7 +67,7 @@ namespace Cashwu.Core.Utility.Extension
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -89,7 +89,7 @@ namespace Cashwu.Core.Utility.Extension
 
         public static byte ToByte(this object me)
         {
-            return me.ToByte(default(byte));
+            return me.ToByte(default);
         }
 
         public static sbyte ToSByte(this object me, sbyte defaultValue)

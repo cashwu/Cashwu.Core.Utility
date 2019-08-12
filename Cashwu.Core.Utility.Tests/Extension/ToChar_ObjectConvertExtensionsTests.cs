@@ -1,4 +1,3 @@
-using System;
 using Cashwu.Core.Utility.Extension;
 using FluentAssertions;
 using Xunit;
