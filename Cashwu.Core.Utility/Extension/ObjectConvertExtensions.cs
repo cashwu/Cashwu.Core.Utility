@@ -96,7 +96,7 @@ namespace Cashwu.Core.Utility.Extension
         {
             var result = defaultValue;
 
-            if (me == null || me == DBNull.Value)
+            if (me == null)
             {
                 return result;
             }
@@ -118,7 +118,7 @@ namespace Cashwu.Core.Utility.Extension
 
         public static sbyte ToSByte(this object me)
         {
-            return me.ToSByte(default(sbyte));
+            return me.ToSByte(default);
         }
 
         public static short ToShort(this object me, short defaultValue)
