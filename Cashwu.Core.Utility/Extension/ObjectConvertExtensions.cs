@@ -445,7 +445,8 @@ namespace Cashwu.Core.Utility.Extension
             return me.ToBool(false);
         }
 
-        public static TEnum ToEnum<TEnum>(this object me, TEnum defaultValue) where TEnum : struct
+        public static TEnum ToEnum<TEnum>(this object me, TEnum defaultValue)
+                where TEnum : struct
         {
             TEnum result = defaultValue;
 
