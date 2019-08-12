@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cashwu.Core.Utility.Tests.Extension
 {
-    public class ToDateTimeObjectCorvertExtensionsTests
+    public class ToDateTimeObjectConvertExtensionsTests
     {
         [Fact]
         public void Null()
