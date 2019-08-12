@@ -5,103 +5,103 @@ using Xunit;
 
 namespace Cashwu.Core.Utility.Tests.Extension
 {
-    public class ToUIntObjectConvertExtensionsTests
+    public class ToLongObjectConvertExtensionsTests
     {
         [Fact]
         public void Null()
         {
-            ((object)null).ToUInt().Should().Be(0);
+            ((object)null).ToLong().Should().Be(0);
         }
 
         [Fact]
         public void Null_default_value()
         {
-            ((object)null).ToUInt(1).Should().Be(1);
+            ((object)null).ToLong(1).Should().Be(1);
         }
 
         [Fact]
         public void Empty_string()
         {
-            "".ToUInt().Should().Be(0);
+            "".ToLong().Should().Be(0);
         }
 
         [Fact]
         public void Not_empty_string_not_numeric()
         {
-            "a".ToUInt().Should().Be(0);
+            "a".ToLong().Should().Be(0);
         }
 
         [Fact]
         public void Not_empty_string_is_numeric()
         {
-            "2".ToUInt().Should().Be(2);
+            "2".ToLong().Should().Be(2);
         }
 
         [Fact]
         public void Char_not_numeric()
         {
-            'a'.ToUInt().Should().Be(0x61);
+            'a'.ToLong().Should().Be(0x61);
         }
 
         [Fact]
         public void Char_is_numeric()
         {
-            '1'.ToUInt().Should().Be(0x31);
+            '1'.ToLong().Should().Be(0x31);
         }
 
         [Fact]
         public void Byte()
         {
             byte b = byte.MaxValue;
-            b.ToUInt().Should().Be(255);
+            b.ToLong().Should().Be(255);
         }
-        
+
         [Fact]
         public void Short()
         {
             short s = short.MaxValue;
-            s.ToUInt().Should().Be(32767);
+            s.ToLong().Should().Be(32767);
         }
-        
+
         [Fact]
         public void Int()
         {
             int i = int.MaxValue;
-            i.ToUInt().Should().Be(2_147_483_647);
+            i.ToLong().Should().Be(2_147_483_647);
         }
 
         [Fact]
-        public void Long_more_than_uint_size()
+        public void Int_negative()
         {
-            long i = long.MaxValue;
-            Func<uint> action = () => i.ToUInt();
-
-            action.Should()
-                  .Throw<OverflowException>()
-                  .And
-                  .Message.Should()
-                  .Be("Value was either too large or too small for a UInt32.");
-        }
-
-        [Fact]
-        public void Long()
-        {
-            long l = 9;
-            l.ToUInt().Should().Be(9);
+            int i = -10;
+            i.ToLong().Should().Be(-10);
         }
 
         [Fact]
         public void Double()
         {
             double d = 8.1;
-            d.ToUInt().Should().Be(8);
+            d.ToLong().Should().Be(8);
         }
 
         [Fact]
         public void Float()
         {
             float f = 7.1f;
-            f.ToUInt().Should().Be(7);
+            f.ToLong().Should().Be(7);
+        }
+
+        [Fact]
+        public void Decimal()
+        {
+            decimal i = decimal.MaxValue;
+            Func<long> action = () => i.ToLong();
+
+            action.Should()
+                  .Throw<OverflowException>()
+                  .And
+                  .Message.Should()
+                  .Be("Value was either too large or too small for an Int64.");
         }
     }
 }
