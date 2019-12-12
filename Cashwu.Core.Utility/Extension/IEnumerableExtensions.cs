@@ -7,7 +7,6 @@ namespace Cashwu.Core.Utility.Extension
     public static class EnumerableExtensions
     {
         public static string ToJoinString<TSource>(this IEnumerable<TSource> source, string separator)
-                where TSource : struct
         {
             if (source == null)
             {
