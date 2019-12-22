@@ -22,5 +22,7 @@ jobs:
     - name: dotnet pack
       run: dotnet pack ./Cashwu.Core.Utility/Cashwu.Core.Utility.csproj -c Release -o ../release
     - name: nuget publish
+      continue-on-error: true
       run: |
+        if: github.ref == 'refs/heads/master'
         dotnet nuget push ./release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
