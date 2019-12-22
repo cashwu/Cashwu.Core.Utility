@@ -23,4 +23,4 @@ jobs:
       run: dotnet pack ./Cashwu.Core.Utility/Cashwu.Core.Utility.csproj -c Release -o ../release
     - name: nuget publish
       run: |
-        dotnet nuget push ./release/*.nupk -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        dotnet nuget push ./release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
