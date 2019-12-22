@@ -19,12 +19,8 @@ jobs:
       run: |
         dotnet tool install -g coverlet.console
         dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=opencover.xml ./Cashwu.Core.Utility.Tests/Cashwu.Core.Utility.Tests.csproj
-    - name: test report
-      run: |
-        dotnet tool install -g dotnet-reportgenerator-globaltool
-        reportgenerator "-reports:opencover.xml" -reporttype:Html -targetdir:report
     - name: dotnet pack
       run: dotnet pack ./Cashwu.Core.Utility/Cashwu.Core.Utility.csproj -c Release -o ./release
     - name: nuget publish
       run: |
-        ls -al
+        dotnet nuget push release/*.nupk -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
