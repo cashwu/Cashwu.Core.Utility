@@ -10,20 +10,18 @@ jobs:
     - name: setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.2.207
-    - name: tool
-      run: |
-        dotnet tool install --global coverlet.console
-        dotnet tool install --global dotnet-reportgenerator-globaltool
+        dotnet-version: 2.2.207   
     - name: clean
       run: dotnet clean -c Release
     - name: build
       run: dotnet build
     - name: test
       run: |
+        dotnet tool install --global coverlet.console
         dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=opencover.xml ./Cashwu.Core.Utility.Tests/Cashwu.Core.Utility.Tests.csproj
     - name: test report
       run: |
+        dotnet tool install --global dotnet-reportgenerator-globaltool
         reportgenerator "-reports:opencover.xml" -reporttype:Html -targetdir:report
     - name: dotnet pack
       run: dotnet pack ./Cashwu.Core.Utility/Cashwu.Core.Utility.csproj -c Release -o ./release
