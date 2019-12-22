@@ -18,12 +18,10 @@ jobs:
     - name: test
       run: |
         dotnet tool install -g coverlet.console
-        which coverlet
         dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=opencover.xml ./Cashwu.Core.Utility.Tests/Cashwu.Core.Utility.Tests.csproj
     - name: test report
       run: |
         dotnet tool install -g dotnet-reportgenerator-globaltool
-        which reportgenerator
         reportgenerator "-reports:opencover.xml" -reporttype:Html -targetdir:report
     - name: dotnet pack
       run: dotnet pack ./Cashwu.Core.Utility/Cashwu.Core.Utility.csproj -c Release -o ./release
