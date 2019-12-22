@@ -19,12 +19,13 @@ jobs:
       run: |
         dotnet tool install -g coverlet.console
         dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../opencover.xml ./Cashwu.Core.Utility.Tests/Cashwu.Core.Utility.Tests.csproj
-    - name: codecov
+    - name: upload coverage to codecov
       uses: codecov/codecov-action@v1.0.5
       with:
-        name: Cashwu.Core.Utility
         token: ${{ secrets.CODECOV_TOKEN }}
         file: opencover.xml
+        flags: unittests
+        name: Cashwu.Core.Utility
     - name: dotnet pack
       run: dotnet pack ./Cashwu.Core.Utility/Cashwu.Core.Utility.csproj -c Release -o ../release
     - name: nuget publish
