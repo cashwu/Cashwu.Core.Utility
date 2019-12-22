@@ -19,11 +19,7 @@ jobs:
       run: |
         dotnet tool install -g coverlet.console
         dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=../opencover.xml ./Cashwu.Core.Utility.Tests/Cashwu.Core.Utility.Tests.csproj
-    - name: report
-      run: |
-        dotnet tool install -g dotnet-reportgenerator-globaltool
-        reportgenerator "-reports:opencover.xml" -reporttype:Html -targetdir:report
-    - name: Codecov
+    - name: codecov
       uses: codecov/codecov-action@v1.0.5
       with:
         name: Cashwu.Core.Utility
