@@ -2,7 +2,9 @@
 
 [![actions](https://github.com/cashwu/Cashwu.Core.Utility/workflows/.NET%20Core/badge.svg)](https://github.com/cashwu/Cashwu.Core.Utility/actions)
 
+<!--
 [![codecov](https://codecov.io/gh/cashwu/Cashwu.Core.Utility/branch/master/graph/badge.svg)](https://codecov.io/gh/cashwu/Cashwu.Core.Utility)
+-->
 
 ---
 
