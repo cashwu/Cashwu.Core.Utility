@@ -27,6 +27,7 @@ jobs:
         flags: unittests
         name: Cashwu.Core.Utility
     - name: generate build number
+      if: github.ref == 'refs/heads/master'
       uses: einaregilsson/build-number@v2 
       with:
         token: ${{secrets.github_token}}
